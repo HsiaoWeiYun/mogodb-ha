@@ -1,5 +1,7 @@
 version: '3'
 
+#暫時作廢, 請參考mongodb-ha.sh
+
 services:
   mongo-primary:
     image: mongo:4.0
@@ -13,7 +15,6 @@ services:
     command: mongod --config /config/mongod.conf --replSet mongodb-cluster
 
 
-services:
   mongo-slave:
     image: mongo:4.0
     stdin_open: true
@@ -25,7 +26,6 @@ services:
       - "7018:27017"
     command: mongod --config /config/mongod.conf --replSet mongodb-cluster
 
-services:
   mongo-arbiter:
     image: mongo:4.0
     stdin_open: true

@@ -1,4 +1,5 @@
 config = {
+
     "_id" : "mongodb-cluster",
     "writeConcernMajorityJournalDefault" : true,
     "members" : [
@@ -25,7 +26,7 @@ config = {
         "votes" : 1
       }
     ]
-  }
+  };
 
 
-  rs.initiate(config)
+  rs.initiate(config);
